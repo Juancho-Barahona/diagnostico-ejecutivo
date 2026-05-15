@@ -35,7 +35,6 @@
 
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; overflow-x: hidden; }
-
   .page { min-height: 100vh; display: flex; flex-direction: column; }
 
   /* NAV */
@@ -61,7 +60,7 @@
   }
   .anim { animation: fadeUp 0.35s ease both; }
 
-  /* ────── COVER ────── */
+  /* ── COVER ── */
   .cover-eyebrow {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--purple-pale); color: var(--purple);
@@ -95,6 +94,7 @@
   .dim-card:hover { border-color: var(--purple-mid); transform: translateY(-2px); }
   .dim-num { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 600; color: var(--purple); line-height: 1; margin-bottom: 0.4rem; }
   .dim-name { font-size: 0.75rem; color: var(--ink-soft); line-height: 1.4; }
+  .dim-sub  { font-size: 0.68rem; color: var(--ink-soft); line-height: 1.4; margin-top: 0.3rem; font-style: italic; }
 
   .cover-cta-wrap { animation: fadeUp 0.6s 0.32s ease both; }
   .btn-primary {
@@ -123,7 +123,7 @@
   .author-name { font-size: 0.875rem; font-weight: 500; color: var(--ink); }
   .author-role { font-size: 0.78rem; color: var(--ink-soft); margin-top: 1px; }
 
-  /* ────── LEAD FORM ────── */
+  /* ── LEAD FORM ── */
   .form-eyebrow {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--purple-pale); color: var(--purple);
@@ -142,20 +142,16 @@
     font-size: 0.925rem; color: var(--ink-mid); line-height: 1.65;
     margin-bottom: 1.75rem; animation: fadeUp 0.4s 0.1s ease both;
   }
-
   .form-card {
     background: var(--surface); border: 1px solid var(--border-soft);
     border-radius: 16px; padding: 1.75rem;
-    animation: fadeUp 0.4s 0.15s ease both;
-    margin-bottom: 1rem;
+    animation: fadeUp 0.4s 0.15s ease both; margin-bottom: 1rem;
   }
   .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.25rem; }
   .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
   .form-field.full { grid-column: 1 / -1; }
-
   .form-label { font-size: 0.8rem; font-weight: 500; color: var(--ink-mid); letter-spacing: 0.02em; }
   .form-label span { color: var(--purple); }
-
   .form-input, .form-select {
     border: 1px solid var(--border-soft); border-radius: 9px;
     padding: 0.72rem 0.9rem; font-size: 0.9rem; color: var(--ink); background: var(--bg);
@@ -167,7 +163,6 @@
     border-color: var(--purple); box-shadow: 0 0 0 3px rgba(74,63,160,0.08);
   }
   .form-input.error, .form-select.error { border-color: var(--red); }
-
   .select-wrap { position: relative; }
   .select-wrap::after {
     content:''; position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
@@ -175,10 +170,8 @@
     border-left: 4px solid transparent; border-right: 4px solid transparent;
     border-top: 5px solid var(--ink-soft); pointer-events: none;
   }
-
   .form-error { font-size: 0.75rem; color: var(--red); margin-top: 1px; display: none; }
   .form-error.show { display: block; }
-
   .btn-form {
     display: flex; align-items: center; justify-content: center; gap: 0.5rem;
     width: 100%; background: var(--purple); color: #fff; border: none;
@@ -188,7 +181,6 @@
   }
   .btn-form:hover { background: var(--purple-light); transform: translateY(-1px); }
   .btn-form svg { width: 15px; height: 15px; }
-
   .privacy-note {
     display: flex; align-items: flex-start; gap: 0.5rem;
     font-size: 0.75rem; color: var(--ink-soft); line-height: 1.55;
@@ -196,22 +188,28 @@
   }
   .privacy-note svg { flex-shrink: 0; margin-top: 1px; }
 
-  /* ────── QUESTION ────── */
+  /* ── QUESTION ── */
   .q-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
   .q-dim-tag {
     font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--purple); background: var(--purple-pale); padding: 0.3rem 0.75rem; border-radius: 999px;
   }
   .q-counter { font-size: 0.8rem; color: var(--ink-soft); }
-
   .progress-track { height: 3px; background: var(--border-soft); border-radius: 2px; margin-bottom: 1.75rem; overflow: hidden; }
   .progress-fill { height: 100%; background: var(--purple); border-radius: 2px; transition: width 0.4s cubic-bezier(0.4,0,0.2,1); }
 
   .q-text {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: 400; line-height: 1.45;
-    color: var(--ink); margin-bottom: 1.75rem;
+    font-size: clamp(1.15rem, 3vw, 1.4rem); font-weight: 400; line-height: 1.45;
+    color: var(--ink); margin-bottom: 0.6rem;
   }
+  .q-note {
+    font-size: 0.8rem; color: var(--ink-soft); line-height: 1.55;
+    margin-bottom: 1.5rem; font-style: italic;
+    background: var(--bg); border-radius: 8px; padding: 0.6rem 0.75rem;
+    border-left: 2px solid var(--purple-mid);
+  }
+  .q-spacer { margin-bottom: 1.5rem; }
 
   .options { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.75rem; }
   .opt {
@@ -241,7 +239,6 @@
   }
   .btn-back:hover { background: var(--surface); color: var(--ink); }
   .btn-back svg { width: 14px; height: 14px; }
-
   .btn-next {
     display: flex; align-items: center; gap: 0.4rem;
     background: var(--purple); color: #fff; border: none;
@@ -253,7 +250,7 @@
   .btn-next.on:hover { background: var(--purple-light); transform: translateY(-1px); }
   .btn-next svg { width: 14px; height: 14px; }
 
-  /* ────── RESULTS ────── */
+  /* ── RESULTS ── */
   .result-header { margin-bottom: 1.5rem; }
   .risk-pill {
     display: inline-flex; align-items: center; gap: 0.45rem;
@@ -261,21 +258,17 @@
     padding: 0.35rem 0.875rem; border-radius: 999px; margin-bottom: 1rem;
   }
   .risk-pill-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-
   .result-score-line { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem; }
   .result-score { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 600; line-height: 1; }
   .result-score-denom { font-size: 1.1rem; color: var(--ink-soft); }
-
   .result-headline {
     font-family: 'Playfair Display', serif;
     font-size: clamp(1.3rem,3vw,1.65rem); font-weight: 400; line-height: 1.3; margin-bottom: 0.875rem;
   }
   .result-desc { font-size: 0.925rem; color: var(--ink-mid); line-height: 1.75; margin-bottom: 1.5rem; }
-
   .result-quote { border-radius: 14px; padding: 1.25rem 1.375rem; margin-bottom: 1.5rem; }
   .quote-by { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; opacity: 0.7; }
   .quote-text { font-family: 'Playfair Display', serif; font-size: 0.975rem; font-style: italic; line-height: 1.65; }
-
   .dim-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.625rem; margin-bottom: 1.5rem; }
   .dim-result-card { background: var(--surface); border: 1px solid var(--border-soft); border-radius: 12px; padding: 0.875rem; }
   .dim-result-name { font-size: 0.72rem; color: var(--ink-soft); line-height: 1.4; margin-bottom: 0.5rem; }
@@ -283,14 +276,12 @@
   .dim-result-max { font-size: 0.8rem; color: var(--ink-soft); }
   .dim-result-bar { height: 3px; background: var(--border-soft); border-radius: 2px; margin-top: 0.5rem; overflow: hidden; }
   .dim-result-fill { height: 100%; border-radius: 2px; }
-
   .next-step-box {
     background: var(--surface); border: 1px solid var(--border-soft);
     border-radius: 14px; padding: 1.375rem; margin-bottom: 1.25rem;
   }
   .next-step-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.625rem; }
   .next-step-text { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.7; margin-bottom: 1.1rem; }
-
   .btn-cta {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--purple); color: #fff; border: none;
@@ -299,7 +290,6 @@
     text-decoration: none; transition: background 0.2s, transform 0.15s;
   }
   .btn-cta:hover { background: var(--purple-light); transform: translateY(-1px); }
-
   .action-row { display: flex; gap: 0.625rem; margin-bottom: 1.5rem; }
   .btn-action {
     flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
@@ -315,7 +305,6 @@
   .footer-text { font-size: 0.78rem; color: var(--ink-soft); line-height: 1.6; }
   .footer-text a { color: var(--purple); text-decoration: none; }
 
-  /* RESPONSIVE */
   @media (max-width: 500px) {
     .nav { padding: 1rem; }
     .main { padding: 1.5rem 1rem 2.5rem; }
@@ -341,16 +330,28 @@
         <h1 class="cover-title">¿Tiene tu equipo la capacidad para cumplir tu <em>meta de negocio</em> este año?</h1>
         <p class="cover-sub">12 preguntas · 3 dimensiones · Un diagnóstico honesto sobre el estado real de tu equipo directivo. Responde con honestidad — no como quisieras que fuera, sino como realmente es hoy.</p>
         <div class="cover-dims">
-          <div class="dim-card"><div class="dim-num">1</div><div class="dim-name">Nivel operativo del CEO</div></div>
-          <div class="dim-card"><div class="dim-num">2</div><div class="dim-name">Capacidad del equipo directivo</div></div>
-          <div class="dim-card"><div class="dim-num">3</div><div class="dim-name">Alineación y retención</div></div>
+          <div class="dim-card">
+            <div class="dim-num">1</div>
+            <div class="dim-name">Nivel operativo del CEO</div>
+            <div class="dim-sub">¿Cuánto tiempo pasas en operativo vs. estratégico?</div>
+          </div>
+          <div class="dim-card">
+            <div class="dim-num">2</div>
+            <div class="dim-name">Capacidad del equipo directivo</div>
+            <div class="dim-sub">¿Tus líderes deciden solos o esperan instrucciones?</div>
+          </div>
+          <div class="dim-card">
+            <div class="dim-num">3</div>
+            <div class="dim-name">Alineación y retención</div>
+            <div class="dim-sub">¿Tu equipo entiende la estrategia y se queda?</div>
+          </div>
         </div>
         <div class="cover-cta-wrap">
           <button class="btn-primary" onclick="show('s-form')">
             Comenzar diagnóstico
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </button>
-          <p class="cover-hint">Puntaje por pregunta: 0 = situación crítica · 3 = consolidado</p>
+          <p class="cover-hint">Puntaje por pregunta: 0 = situación crítica · 1 = en proceso · 2 = avanzando · 3 = consolidado</p>
         </div>
         <div class="cover-author">
           <div class="author-avatar">LH</div>
@@ -366,28 +367,23 @@
         <div class="form-eyebrow">Paso 1 de 2 · Tus datos</div>
         <h2 class="form-title">Antes de comenzar, cuéntanos sobre ti</h2>
         <p class="form-sub">Usaremos esta información para personalizar tu diagnóstico y para que Laura pueda darte seguimiento con contexto real sobre tu empresa.</p>
-
         <div class="form-card">
           <div class="form-grid">
-
             <div class="form-field">
               <label class="form-label" for="f-name">Nombre completo <span>*</span></label>
               <input class="form-input" type="text" id="f-name" placeholder="Ej. Carlos Martínez" autocomplete="name">
               <span class="form-error" id="err-name">Ingresa tu nombre completo.</span>
             </div>
-
             <div class="form-field">
               <label class="form-label" for="f-email">Correo electrónico <span>*</span></label>
               <input class="form-input" type="email" id="f-email" placeholder="carlos@empresa.com" autocomplete="email">
               <span class="form-error" id="err-email">Ingresa un correo válido.</span>
             </div>
-
             <div class="form-field full">
               <label class="form-label" for="f-company">Empresa <span>*</span></label>
               <input class="form-input" type="text" id="f-company" placeholder="Nombre de tu empresa" autocomplete="organization">
               <span class="form-error" id="err-company">Ingresa el nombre de tu empresa.</span>
             </div>
-
             <div class="form-field full">
               <label class="form-label" for="f-size">Número de empleados <span>*</span></label>
               <div class="select-wrap">
@@ -403,15 +399,12 @@
               </div>
               <span class="form-error" id="err-size">Selecciona el tamaño de tu empresa.</span>
             </div>
-
           </div>
-
           <button class="btn-form" onclick="submitForm()">
             Comenzar el diagnóstico
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </button>
         </div>
-
         <p class="privacy-note">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5 7V5a3 3 0 016 0v2"/></svg>
           Tu información es confidencial. Solo Laura Hernández tendrá acceso a tus datos para darte seguimiento personalizado. No compartimos tu información con terceros.
@@ -428,6 +421,7 @@
           <div class="progress-fill" id="q-prog"></div>
         </div>
         <p class="q-text" id="q-text"></p>
+        <p class="q-note" id="q-note" style="display:none;"></p>
         <div class="options" id="q-options"></div>
         <div class="q-nav">
           <button class="btn-back" id="btn-back" onclick="goBack()">
@@ -493,146 +487,169 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
-/* ═══════════════════════════════════════════════
-   ▸ CONFIGURACIÓN — reemplaza esta URL con la de
-     tu Google Apps Script (ver instrucciones abajo)
-   ═══════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════
+   CONFIG — pega aquí la URL de tu Apps Script
+══════════════════════════════════════════════ */
 const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxFmdXjVbaWxasU2vKCGCUIP-Sd-TpiGPJnVvbauQ5o3hB8XLVqyyOCM3RsYTq_1Ru6/exec';
 
-/* ═══════════════ DATA ═══════════════ */
+/* ══════════════════════════════════════════════
+   PREGUNTAS — copiadas exactamente del PPT V2
+══════════════════════════════════════════════ */
 const questions = [
+  /* D1 */
   { dim:1, tag:'Dimensión 1 · CEO operativo', num:'1 / 12',
     text:'¿Cuántas personas te reportan directamente hoy?',
+    note: null,
     opts:[
-      {pts:0,text:'Más de 10 — prácticamente todos pasan por mí'},
-      {pts:1,text:'Entre 7 y 10 — demasiadas, pero es lo que hay'},
-      {pts:2,text:'Entre 4 y 6 — manejable aunque a veces me satura'},
-      {pts:3,text:'3 o menos — tengo estructura clara y funciona'}
+      {pts:0, text:'Más de 10 — prácticamente todos pasan por mí'},
+      {pts:1, text:'Entre 7 y 10 — demasiadas, pero es lo que hay'},
+      {pts:2, text:'Entre 4 y 6 — manejable aunque a veces me satura'},
+      {pts:3, text:'3 o menos — tengo estructura clara y funciona'}
     ]},
   { dim:1, tag:'Dimensión 1 · CEO operativo', num:'2 / 12',
     text:'¿Cuánto de tu semana se va en decisiones operativas que debería tomar alguien de tu equipo?',
+    note:'Ejemplos: aprobar compras, resolver conflictos del día a día, responder clientes, revisar reportes operativos, dar seguimiento a tareas que alguien más debería ejecutar.',
     opts:[
-      {pts:0,text:'Más del 70% — casi no tengo tiempo para pensar estratégicamente'},
-      {pts:1,text:'Entre el 50% y 70% — sé que debería cambiar pero no cómo'},
-      {pts:2,text:'Entre el 30% y 50% — trabajo en eso aunque no siempre lo logro'},
-      {pts:3,text:'Menos del 30% — mi equipo maneja lo operativo con autonomía'}
+      {pts:0, text:'Más del 70% — casi no tengo tiempo para pensar estratégicamente'},
+      {pts:1, text:'Entre el 50% y 70% — sé que debería cambiar pero no cómo'},
+      {pts:2, text:'Entre el 30% y 50% — trabajo en eso aunque no siempre lo logro'},
+      {pts:3, text:'Menos del 30% — mi equipo maneja lo operativo con autonomía'}
     ]},
   { dim:1, tag:'Dimensión 1 · CEO operativo', num:'3 / 12',
     text:'¿Qué pasa cuando te vas de viaje o te desconectas un día completo?',
+    note: null,
     opts:[
-      {pts:0,text:'El teléfono no para — necesitan mi aprobación para todo'},
-      {pts:1,text:'Me llaman para cosas importantes pero podría ser peor'},
-      {pts:2,text:'Funcionan bien, con alguna consulta ocasional'},
-      {pts:3,text:'La empresa opera sin problema — no me necesitan para el día a día'}
+      {pts:0, text:'El teléfono no para — necesitan mi aprobación para todo'},
+      {pts:1, text:'Me llaman para cosas importantes pero podría ser peor'},
+      {pts:2, text:'Funcionan bien, con alguna consulta ocasional'},
+      {pts:3, text:'La empresa opera sin problema — no me necesitan para el día a día'}
     ]},
   { dim:1, tag:'Dimensión 1 · CEO operativo', num:'4 / 12',
-    text:'¿Cuándo fue la última vez que pasaste un día completo pensando en la estrategia del negocio?',
+    text:'¿Cuándo fue la última vez que pasaste un día completo —sin interrupciones, sin juntas operativas, sin apagar incendios— revisando la estrategia de tu negocio a 3–5 años?',
+    note: null,
     opts:[
-      {pts:0,text:'No recuerdo — hace meses o no ha pasado este año'},
-      {pts:1,text:'Hace algunas semanas — fue la excepción, no la regla'},
-      {pts:2,text:'Ocurre de vez en cuando — intento proteger ese tiempo'},
-      {pts:3,text:'Regularmente — tengo espacio para pensar en el negocio'}
+      {pts:0, text:'No recuerdo — hace meses o no ha pasado este año'},
+      {pts:1, text:'Hace algunas semanas — fue la excepción, no la regla'},
+      {pts:2, text:'Ocurre de vez en cuando — intento proteger ese tiempo'},
+      {pts:3, text:'Regularmente — tengo espacio para pensar en el negocio'}
     ]},
+  /* D2 */
   { dim:2, tag:'Dimensión 2 · Equipo directivo', num:'5 / 12',
     text:'¿Cuántos de tus líderes directos pueden tomar decisiones estratégicas sin consultarte?',
+    note:'Ejemplos: definir prioridades de área, reasignar recursos, pausar un proyecto, negociar con clientes o proveedores clave.',
     opts:[
-      {pts:0,text:'Ninguno o casi ninguno — todo pasa por mí'},
-      {pts:1,text:'Uno o dos — el resto necesita mi aprobación'},
-      {pts:2,text:'La mitad — algunos sí, otros todavía no'},
-      {pts:3,text:'La mayoría — confío en su criterio para decidir solos'}
+      {pts:0, text:'Ninguno o casi ninguno — todo pasa por mí'},
+      {pts:1, text:'Uno o dos — el resto necesita mi aprobación'},
+      {pts:2, text:'La mitad — algunos sí, otros todavía no'},
+      {pts:3, text:'La mayoría — confío en su criterio para decidir solos'}
     ]},
   { dim:2, tag:'Dimensión 2 · Equipo directivo', num:'6 / 12',
     text:'¿Cómo ascendiste a tus líderes actuales a sus posiciones?',
+    note: null,
     opts:[
-      {pts:0,text:'Por lealtad, antigüedad o porque no había otra opción'},
-      {pts:1,text:'Por resultados operativos — eran los mejores en lo que hacían'},
-      {pts:2,text:'Por resultados y algunas competencias de liderazgo evaluadas'},
-      {pts:3,text:'Por competencias de liderazgo demostradas y evaluadas formalmente'}
+      {pts:0, text:'Por lealtad, antigüedad o porque no había otra opción'},
+      {pts:1, text:'Por resultados operativos — eran los mejores en lo que hacían'},
+      {pts:2, text:'Por resultados y algunas competencias de liderazgo evaluadas'},
+      {pts:3, text:'Por competencias de liderazgo demostradas y evaluadas formalmente'}
     ]},
   { dim:2, tag:'Dimensión 2 · Equipo directivo', num:'7 / 12',
-    text:'¿Tienes claridad sobre quiénes son tus líderes de alto potencial y quiénes necesitan desarrollo urgente?',
+    text:'¿Tienes claridad sobre quiénes son tus líderes de alto potencial* y quiénes necesitan desarrollo urgente**?',
+    note:'*Alto potencial: candidatos a sucesión o responsables de áreas críticas del negocio.\n**Desarrollo urgente: quienes hoy tienen brechas que impactan resultados.',
     opts:[
-      {pts:0,text:'No — tengo intuición pero no datos concretos'},
-      {pts:1,text:'Tengo una idea general pero no está documentada ni evaluada'},
-      {pts:2,text:'Sí, aunque el proceso de evaluación podría ser más robusto'},
-      {pts:3,text:'Sí — tenemos un proceso formal de Talent Review con criterios claros'}
+      {pts:0, text:'No — tengo intuición pero no datos concretos'},
+      {pts:1, text:'Tengo una idea general pero no está documentada ni evaluada'},
+      {pts:2, text:'Sí, aunque el proceso de evaluación podría ser más robusto'},
+      {pts:3, text:'Sí — tenemos un proceso formal de Talent Review con criterios claros'}
     ]},
   { dim:2, tag:'Dimensión 2 · Equipo directivo', num:'8 / 12',
     text:'¿Qué tan preparado está tu equipo directivo para acompañar la expansión que tienes planeada?',
+    note: null,
     opts:[
-      {pts:0,text:'No estoy seguro de que pueda — me preocupa seriamente'},
-      {pts:1,text:'Algunos sí, pero hay brechas importantes que no sé cómo cerrar'},
-      {pts:2,text:'Creo que sí, aunque algunos necesitan desarrollo antes de escalar'},
-      {pts:3,text:'Tengo confianza — el equipo está listo para el siguiente nivel'}
+      {pts:0, text:'No estoy seguro de que pueda — me preocupa seriamente'},
+      {pts:1, text:'Algunos sí, pero hay brechas importantes que no sé cómo cerrar'},
+      {pts:2, text:'Creo que sí, aunque algunos necesitan desarrollo antes de escalar'},
+      {pts:3, text:'Tengo confianza — el equipo está listo para el siguiente nivel'}
     ]},
+  /* D3 */
   { dim:3, tag:'Dimensión 3 · Alineación y retención', num:'9 / 12',
     text:'¿Tu equipo directivo podría explicar con precisión la estrategia del negocio para los próximos 2 años?',
+    note: null,
     opts:[
-      {pts:0,text:'No — cada quien tiene su propia versión de hacia dónde vamos'},
-      {pts:1,text:'Más o menos — conocen las metas pero no la lógica estratégica'},
-      {pts:2,text:'La mayoría sí, aunque hay algunos desconectados'},
-      {pts:3,text:'Sí — la estrategia está clara y todos la pueden explicar y ejecutar'}
+      {pts:0, text:'No — cada quien tiene su propia versión de hacia dónde vamos'},
+      {pts:1, text:'Más o menos — conocen las metas pero no la lógica estratégica'},
+      {pts:2, text:'La mayoría sí, aunque hay algunos desconectados'},
+      {pts:3, text:'Sí — la estrategia está clara y todos la pueden explicar y ejecutar'}
     ]},
   { dim:3, tag:'Dimensión 3 · Alineación y retención', num:'10 / 12',
-    text:'¿Has perdido talento clave en los últimos 12 meses que no querías perder?',
+    text:'¿Has perdido talento clave* en los últimos 12 meses que no querías perder?',
+    note:'*Talento clave: personas cuya salida afectó resultados, generó una crisis operativa o dejó un vacío difícil de cubrir.',
     opts:[
-      {pts:0,text:'Sí, más de una persona importante — y me tomó por sorpresa'},
-      {pts:1,text:'Una persona clave — entiendo parcialmente por qué se fue'},
-      {pts:2,text:'Hubo movimiento pero no fue talento crítico'},
-      {pts:3,text:'No — mi equipo clave está estable y comprometido'}
+      {pts:0, text:'Sí, más de una persona importante — y me tomó por sorpresa'},
+      {pts:1, text:'Una persona clave — entiendo parcialmente por qué se fue'},
+      {pts:2, text:'Hubo movimiento pero no fue talento crítico'},
+      {pts:3, text:'No — mi equipo clave está estable y comprometido'}
     ]},
   { dim:3, tag:'Dimensión 3 · Alineación y retención', num:'11 / 12',
     text:'¿Tienes identificado quién reemplazaría a tus 2 roles más críticos si mañana quedaran vacíos?',
+    note: null,
     opts:[
-      {pts:0,text:'No — ninguno tiene sucesor identificado y me preocupa'},
-      {pts:1,text:'Tengo personas en mente pero sin un plan formal de desarrollo'},
-      {pts:2,text:'Sí, hay candidatos identificados aunque en proceso de preparación'},
-      {pts:3,text:'Sí — tenemos plan de sucesión activo para los roles críticos'}
+      {pts:0, text:'No — ninguno tiene sucesor identificado y me preocupa'},
+      {pts:1, text:'Tengo personas en mente pero sin un plan formal de desarrollo'},
+      {pts:2, text:'Sí, hay candidatos identificados aunque en proceso de preparación'},
+      {pts:3, text:'Sí — tenemos plan de sucesión activo para los roles críticos'}
     ]},
   { dim:3, tag:'Dimensión 3 · Alineación y retención', num:'12 / 12',
-    text:'¿Sabes con certeza si tu equipo está motivado por razones más allá del salario?',
+    text:'¿Sabes con Certeza* si tu equipo está motivado por razones más allá del salario?',
+    note:'*Certeza = tienes datos documentados, no solo intuición: encuestas, planes de desarrollo individuales, conversaciones registradas con seguimiento.',
     opts:[
-      {pts:0,text:'No — nunca lo hemos evaluado formalmente'},
-      {pts:1,text:'Tengo intuición pero no datos — y me preocupa que se vayan'},
-      {pts:2,text:'Tengo conversaciones individuales aunque no un sistema formal'},
-      {pts:3,text:'Sí — tenemos diagnóstico de motivadores y estrategia de retención integral'}
+      {pts:0, text:'No — nunca lo hemos evaluado formalmente'},
+      {pts:1, text:'Tengo intuición pero no datos — y me preocupa que se vayan'},
+      {pts:2, text:'Tengo conversaciones individuales aunque no un sistema formal'},
+      {pts:3, text:'Sí — tenemos diagnóstico de motivadores y estrategia de retención integral'}
     ]}
 ];
 
+/* ══════════════════════════════════════════════
+   PERFILES DE RESULTADO — tomados del PPT V2
+══════════════════════════════════════════════ */
 const profiles = [
   { min:26, max:36,
     label:'Riesgo bajo', sublabel:'Equipo en desarrollo',
     color:'#0D6B50', bg:'#DFF0E8',
     headline:'Tu equipo tiene base sólida — hay oportunidades de escalar más rápido.',
-    desc:'Tienes estructura y líderes con criterio. El reto ahora es acelerar el potencial que ya existe antes de que el mercado se mueva más rápido que tú.',
-    quote:'Tu mayor riesgo no es el equipo que tienes hoy — es no prepararlo para la empresa que quieres ser en 24 meses. El talento que no se desarrolla no se queda.',
-    next:'Diagnóstico completo con data para identificar quién está listo para el siguiente nivel.'
+    desc:'Tienes estructura y líderes con criterio. Pero "base sólida" no es lo mismo que "listo para escalar": hay talento que aún no está siendo desarrollado, sucesiones sin plan formal y motivadores que se asumen sin validarse. El riesgo no es el equipo de hoy — es perderlo o frenarlo justo cuando más lo necesitas.',
+    quote:'Tienes la mejor condición para actuar: un equipo funcional con margen de maniobra. El problema es que esa ventana se cierra. Los líderes que no ven un plan de crecimiento claro se van a donde sí lo hay. Y la empresa que no formaliza su siguiente nivel de estructura lo construye en crisis, no en orden.',
+    next:'El Diagnóstico Profundo de Equipo Directivo te dice exactamente quién está listo para el siguiente nivel, quién necesita desarrollo antes de escalar y qué estructura requiere la empresa que quieres ser en 24 meses — con datos, no con intuición.'
   },
   { min:14, max:25,
     label:'Riesgo medio', sublabel:'Zona de alerta',
     color:'#B06B10', bg:'#FAF0DC',
     headline:'Tu empresa está creciendo — pero tu equipo no está diseñado para acompañarlo.',
-    desc:'Tienes líderes con potencial y algo de estructura. Pero hay brechas reales que, si no se cierran ahora, van a frenar el crecimiento que tienes planeado.',
-    quote:'Tienes un equipo que ejecuta bien lo operativo pero que aún no tiene criterio estratégico para acompañarte en la siguiente etapa. Puedes seguir así — o puedes construir el equipo que necesitas ahora.',
-    next:'Las brechas de este test son solo el primer nivel. El diagnóstico completo te da certeza sobre quién se queda, quién crece y qué estructura necesita tu empresa.'
+    desc:'Tienes líderes con potencial y algo de estructura. Pero hay brechas reales: líderes que aún no deciden solos, talento sin plan de desarrollo, y un CEO que sigue siendo el cuello de botella. Si no se cierran ahora, el crecimiento que tienes planeado llegará solo hasta donde tú aguantes.',
+    quote:'Tienes un equipo que ejecuta bien lo operativo, pero sin criterio estratégico para la siguiente etapa. Un equipo listo no te consulta todo — te reporta resultados. Puedes seguir así hasta que el mercado se mueva más rápido que tú. O puedes cerrar estas brechas hoy, con datos, no con intuición.',
+    next:'Las brechas de este test son solo el primer nivel. El Diagnóstico Profundo de Equipo Directivo mapea a cada líder, valida tu estrategia e identifica exactamente qué estructura necesita tu empresa para la siguiente etapa — para que sepas con datos quién se queda, quién crece y qué cambiar hoy.'
   },
   { min:0, max:13,
     label:'Riesgo alto', sublabel:'Señal de alerta urgente',
     color:'#9A2424', bg:'#FAEAEA',
     headline:'Estás cargando tu empresa solo — y eso tiene un límite.',
-    desc:'Los resultados indican que estás operando como el motor principal de tu empresa. Eso funciona hasta cierto punto. Después de ese punto, el negocio no puede crecer más rápido que tu energía.',
-    quote:'Lo que describes no es un problema de delegación ni de confianza. Es un problema de diseño organizacional: tu empresa creció sin una estructura pensada para crecer. Eso solo se resuelve con diagnóstico con data y acompañamiento sostenido.',
-    next:'El costo de seguir como estás — en tiempo, talento y oportunidades perdidas — es mayor que el costo de resolverlo ahora. El primer paso es saber exactamente qué está pasando.'
+    desc:'Los resultados indican que eres el motor principal de tu empresa: las decisiones pasan por ti, el talento clave depende de tu presencia y la estrategia vive en tu cabeza, no en el equipo. Eso tiene un costo real: decisiones lentas, líderes que no crecen y oportunidades que se pierden mientras tú apaga incendios.',
+    quote:'Lo que describes no es falta de voluntad ni de confianza — es falta de estructura. Tu empresa creció y el modelo de liderazgo no creció con ella. Mientras eso no cambie, seguirás siendo el techo de tu propio negocio. Esto no se resuelve con más esfuerzo tuyo: se resuelve con un diagnóstico que muestre exactamente dónde están las grietas y un plan para cerrarlas con orden.',
+    next:'Cada mes que pasa sin estructura cuesta talento, decisiones lentas y crecimiento frenado. El Diagnóstico Profundo de Equipo Directivo identifica exactamente dónde están las grietas, qué perfil de liderazgo necesitas y qué cambios dan resultado en los primeros 90 días.'
   }
 ];
 
-/* ═══════════════ STATE ═══════════════ */
+/* ══════════════════════════════════════════════
+   STATE
+══════════════════════════════════════════════ */
 let current = 0;
 let answers = new Array(12).fill(null);
 let lastResult = null;
 let lead = {};
 
-/* ═══════════════ HELPERS ═══════════════ */
+/* ══════════════════════════════════════════════
+   HELPERS
+══════════════════════════════════════════════ */
 function show(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -643,7 +660,9 @@ function getScore(i) {
   return answers[i] !== null ? questions[i].opts[answers[i]].pts : 0;
 }
 
-/* ═══════════════ FORM ═══════════════ */
+/* ══════════════════════════════════════════════
+   FORM
+══════════════════════════════════════════════ */
 function submitForm() {
   const name    = document.getElementById('f-name').value.trim();
   const email   = document.getElementById('f-email').value.trim();
@@ -661,7 +680,6 @@ function submitForm() {
   check('f-email',   'err-email',   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
   check('f-company', 'err-company', company.length > 1);
   check('f-size',    'err-size',    size !== '');
-
   if (!valid) return;
 
   lead = { name, email, company, size };
@@ -671,13 +689,23 @@ function submitForm() {
   show('s-question');
 }
 
-/* ═══════════════ QUESTIONS ═══════════════ */
+/* ══════════════════════════════════════════════
+   QUESTIONS
+══════════════════════════════════════════════ */
 function renderQ() {
   const q = questions[current];
   document.getElementById('q-dim-tag').textContent = q.tag;
   document.getElementById('q-counter').textContent = q.num;
   document.getElementById('q-text').textContent = q.text;
   document.getElementById('q-prog').style.width = ((current + 1) / 12 * 100) + '%';
+
+  const noteEl = document.getElementById('q-note');
+  if (q.note) {
+    noteEl.textContent = q.note;
+    noteEl.style.display = 'block';
+  } else {
+    noteEl.style.display = 'none';
+  }
 
   const wrap = document.getElementById('q-options');
   wrap.innerHTML = '';
@@ -713,7 +741,9 @@ function goBack() {
   if (current > 0) { current--; renderQ(); }
 }
 
-/* ═══════════════ RESULTS ═══════════════ */
+/* ══════════════════════════════════════════════
+   RESULTS
+══════════════════════════════════════════════ */
 function showResults() {
   const d1 = [0,1,2,3].reduce((s,i) => s + getScore(i), 0);
   const d2 = [4,5,6,7].reduce((s,i) => s + getScore(i), 0);
@@ -748,12 +778,12 @@ function showResults() {
 
   document.getElementById('res-next').textContent = p.next;
   show('s-result');
-
-  // Save to Google Sheets silently
   saveToSheets(d1, d2, d3, total, p.label);
 }
 
-/* ═══════════════ GOOGLE SHEETS ═══════════════ */
+/* ══════════════════════════════════════════════
+   GOOGLE SHEETS
+══════════════════════════════════════════════ */
 async function saveToSheets(d1, d2, d3, total, label) {
   if (!SHEETS_URL || SHEETS_URL.includes('TU_SCRIPT_ID')) return;
   try {
@@ -767,15 +797,15 @@ async function saveToSheets(d1, d2, d3, total, label) {
         email:   lead.email,
         company: lead.company,
         size:    lead.size,
-        score:   total,
-        d1, d2, d3,
-        label
+        score:   total, d1, d2, d3, label
       })
     });
   } catch(e) { console.error('Sheets error:', e); }
 }
 
-/* ═══════════════ PDF ═══════════════ */
+/* ══════════════════════════════════════════════
+   PDF
+══════════════════════════════════════════════ */
 function downloadPDF() {
   if (!lastResult) return;
   const { jsPDF } = window.jspdf;
@@ -783,8 +813,7 @@ function downloadPDF() {
   const { total, d1, d2, d3, p } = lastResult;
 
   // Header
-  doc.setFillColor(74,63,160);
-  doc.rect(0, 0, 210, 42, 'F');
+  doc.setFillColor(74,63,160); doc.rect(0,0,210,42,'F');
   doc.setFont('helvetica','bold'); doc.setTextColor(255,255,255);
   doc.setFontSize(20); doc.text('Diagnóstico Ejecutivo', 20, 18);
   doc.setFont('helvetica','normal'); doc.setFontSize(10);
@@ -801,7 +830,7 @@ function downloadPDF() {
   doc.setFontSize(12); doc.setFont('helvetica','normal'); doc.setTextColor(100,100,100);
   doc.text(`${p.label} · ${p.sublabel}`, 20, 76);
 
-  doc.setDrawColor(220,220,220); doc.line(20, 82, 190, 82);
+  doc.setDrawColor(220,220,220); doc.line(20,82,190,82);
 
   // Dimensions
   doc.setFont('helvetica','bold'); doc.setFontSize(11); doc.setTextColor(30,30,30);
@@ -816,7 +845,7 @@ function downloadPDF() {
     doc.setFillColor(74,63,160);  doc.roundedRect(115,y-5,Math.round(65*dim.s/12),5,1.5,1.5,'F');
   });
 
-  doc.line(20, 157, 190, 157);
+  doc.line(20,157,190,157);
 
   // Diagnosis
   doc.setFont('helvetica','bold'); doc.setFontSize(11); doc.setTextColor(30,30,30);
@@ -833,15 +862,17 @@ function downloadPDF() {
   doc.setFillColor(238,237,251);
   doc.roundedRect(18, yp-5, 174, qlines.length*5+14, 3,3,'F');
   doc.setFont('helvetica','bolditalic'); doc.setFontSize(9); doc.setTextColor(74,63,160);
-  doc.text('Palabras de Laura:', 24, yp+2);
+  doc.text('Diagnóstico de Laura:', 24, yp+2);
   doc.setFont('helvetica','italic'); doc.setTextColor(50,45,100);
   doc.text(qlines, 24, yp+9); yp = yp+9+qlines.length*5+10;
 
   // Next step
-  doc.setFont('helvetica','bold'); doc.setFontSize(11); doc.setTextColor(30,30,30);
-  doc.text('Siguiente paso recomendado', 20, yp); yp+=8;
-  doc.setFont('helvetica','normal'); doc.setFontSize(10); doc.setTextColor(60,60,60);
-  doc.text(doc.splitTextToSize(p.next, 170), 20, yp);
+  if (yp < 250) {
+    doc.setFont('helvetica','bold'); doc.setFontSize(11); doc.setTextColor(30,30,30);
+    doc.text('Siguiente paso recomendado', 20, yp); yp+=8;
+    doc.setFont('helvetica','normal'); doc.setFontSize(10); doc.setTextColor(60,60,60);
+    doc.text(doc.splitTextToSize(p.next, 170), 20, yp);
+  }
 
   // Footer
   doc.setFillColor(74,63,160); doc.rect(0,273,210,24,'F');
@@ -853,7 +884,9 @@ function downloadPDF() {
   doc.save(`Diagnostico_Elevate_${lead.name.replace(/\s+/g,'_')}.pdf`);
 }
 
-/* ═══════════════ RESTART ═══════════════ */
+/* ══════════════════════════════════════════════
+   RESTART
+══════════════════════════════════════════════ */
 function restartTest() {
   answers = new Array(12).fill(null); lead = {}; current = 0;
   ['f-name','f-email','f-company'].forEach(id => document.getElementById(id).value='');
